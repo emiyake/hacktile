@@ -1,0 +1,33 @@
+{
+	"name": "ReactNativeBuilds",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"build": "npm run clean && npm run tsc --",
+		"clean": "rimraf dist",
+		"lint": "tslint src/**/*.ts",
+		"start": "node node_modules/react-native/local-cli/cli.js start",
+		"start:android": "npm run build && concurrently -r 'npm run watch' 'react-native run-android'",
+    	"start:ios": "npm run build && concurrently -r 'npm run watch' 'react-native run-ios'",
+		"test": "jest",
+		"tsc": "tsc",
+		"watch": "npm run build -- -w"
+	},
+	"dependencies": {
+		"concurrently": "3.4.0",
+		"react": "16.0.0-alpha.6",
+		"react-native": "0.44.0",
+		"rimraf": "2.6.1",
+		"tslint": "5.4.3",
+		"typescript": "2.3.4"
+	},
+	"devDependencies": {
+		"babel-jest": "20.0.3",
+		"babel-preset-react-native": "1.9.2",
+		"jest": "20.0.4",
+		"react-test-renderer": "16.0.0-alpha.6"
+	},
+	"jest": {
+		"preset": "react-native"
+	}
+}

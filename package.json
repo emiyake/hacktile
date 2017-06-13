@@ -8,12 +8,14 @@
 		"lint": "tslint src/**/*.ts",
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"start:android": "npm run build && concurrently -r 'npm run watch' 'react-native run-android'",
-    	"start:ios": "npm run build && concurrently -r 'npm run watch' 'react-native run-ios'",
+		"start:ios": "npm run build && concurrently -r 'npm run watch' 'react-native run-ios'",
 		"test": "jest",
 		"tsc": "tsc",
 		"watch": "npm run build -- -w"
 	},
 	"dependencies": {
+		"@types/react": "15.0.28",
+		"@types/react-native": "0.44.10",
 		"concurrently": "3.4.0",
 		"react": "16.0.0-alpha.6",
 		"react-native": "0.44.0",

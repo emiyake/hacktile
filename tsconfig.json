@@ -26,6 +26,8 @@
     "jest"
   ],
   "exclude": [
+    "index.android.js",
+    "index.ios.js",
     "android",
     "ios",
     "dist",

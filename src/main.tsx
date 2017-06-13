@@ -5,7 +5,8 @@ import {
   View,
 } from 'react-native';
 
-export default class ReactNativeBuilds extends Component {
+export default class ReactNativeBuilds extends Component<any, any> {
+
   render() {
     return (
       <View style={styles.container}>

@@ -5,7 +5,7 @@ import {
   View,
 } from 'react-native';
 
-export default class ReactNativeBuilds extends Component<any, any> {
+export default class App extends Component<any, any> {
 
   render() {
     return (
@@ -14,10 +14,10 @@ export default class ReactNativeBuilds extends Component<any, any> {
           Hello World!!!!!
         </Text>
         <Text style={styles.instructions}>
-          To get started
+          To get started, modify main.tsx
         </Text>
         <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
+          Press Cmd+R to reload on iOS or R+R in Android,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
       </View>

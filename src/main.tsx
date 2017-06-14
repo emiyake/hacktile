@@ -5,6 +5,8 @@ import {
   View,
 } from 'react-native';
 
+import { Timer } from './timer';
+
 export default class App extends Component<any, any> {
 
   render() {
@@ -18,8 +20,9 @@ export default class App extends Component<any, any> {
         </Text>
         <Text style={styles.instructions}>
           Press Cmd+R to reload on iOS or R+R in Android,{'\n'}
-          Cmd+D or shake for dev menu
+          Press Cmd+D on iOS, Cmd+M on Android or shake for dev menu
         </Text>
+        <Timer />
       </View>
     );
   }

@@ -1,20 +1,20 @@
+import { action, observable } from 'mobx';
+import { inject, observer } from 'mobx-react';
+
 import React from 'react';
 import { Text } from 'react-native';
-import { observable } from 'mobx';
-import { observer } from 'mobx-react';
 
-@observer export class Timer extends React.Component<any, any> {
-    @observable secondsPassed = 0;
+@inject('timerStore') @observer export class Timer extends React.Component<any, any> {
 
-    componentWillMount() {
-        setInterval(() => {
-            this.secondsPassed++;
-        }, 1000);
-    }
-
-    render() {
-        return (<Text>Seconds passed: { this.secondsPassed } </Text> );
-    }
+  render() {
+    return (<Text>Seconds passed: { this.props.timerStore.secondsPassed  } </Text> );
+  }
 }
 
+export class TimerStore {
+  @observable secondsPassed = 0;
 
+  @action tick() {
+    this.secondsPassed++;
+  }
+}

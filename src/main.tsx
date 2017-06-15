@@ -6,17 +6,30 @@ import {
   View,
 } from 'react-native';
 import React, { Component } from 'react';
+import { Timer, TimerStore } from './timer';
 
-import { Timer } from './timer';
+import { HttpClient } from './core/http-client';
+import { Provider } from 'mobx-react';
+
+const timerStore = new TimerStore();
+
+setInterval(() => {
+  timerStore.tick();
+}, 1000);
 
 export default class App extends Component<any, any> {
 
   onLoginPressed() {
-    console.log(this.state);
+    let http = new HttpClient();
+    http
+    .post('authenticate', { clientID: 'appClient',  clientSecret: this.state.password })
+    .then(success => console.log(success))
+    .catch(error => console.log(error));
   }
 
   render() {
     return (
+      <Provider timerStore={timerStore}>
       <View style={styles.container}>
 
         <Text style={styles.title}>
@@ -41,6 +54,7 @@ export default class App extends Component<any, any> {
         <Timer />
 
       </View>
+      </Provider>
     );
   }
 

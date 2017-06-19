@@ -1,44 +1,47 @@
-# Project Name
+# Lab In Hands - Hybrid
 
 ## Bookmarks
 
-- [Site]()
-- [Scope]()
-- [Technical specification]()
-- [MPT]()
-- [Apiary]()
-- [Huboard]()
-- [ScrumD]()
-- [Basecamp]()
-- [Drive]()
-- [Android project]()
+- [Site](http://www.labinhands.com.br/)
+- [Scope](https://docs.google.com/document/d/1DLS9Zy5zADRIKkjYMDNGU8IPbAGvmsruI8AsLWV5rPc/)
+- [MPT](https://docs.google.com/spreadsheets/d/1sXM1qRWCLSJLVY82rVn-xIw_-rXtN1kUUl3wPYs_tW0/)
+- [Basecamp](https://basecamp.com/1835869/projects/10708987)
+- [Drive](https://drive.google.com/drive/u/1/folders/0Bz2dSZYCSepDeUZxY1Z6OC1VQkk)
+- [Server 2.0](https://github.com/indigotech/br-lab_in_hands-server-api)
+- [Admin 2.0](https://github.com/indigotech/br-lab_in_hands-server-admin) 
 - [Homolog env]()
 - [Hockey app]()
 - [Hockey app staging]()
-- ...
+
+### 1.0 resources
+- [iOS 1.0](https://github.com/indigotech/br-lab_in_hands-app_piloto-ios)
+- [Server 1.0](https://github.com/indigotech/br-lab_in_hands-app_piloto-server)
+- [Admin 1.0](https://github.com/indigotech/br-lab_in_hands-app_piloto-cms)
 
 ## Development Environment Setup
 
-_List all versions of IDEs (XCode, Android Studio etc.) and base components (Node.js, Ruby, MongoDB etc.)._
-
-_Give instructions to set up the development environment setup. For more complicated environment setup (i.e. complex servers), you can use an auxiliary documentation on Docs/ENVIRONMENT.md, pasting the link here._
-
-- XCode - 7.0.1
-- Cocoapods - 0.9.2
-- Node.JS - 3.3.1
-
-To compile this project you must setup a VPN connection between the client's and your machine, following the instructions below:
-
-- Setup local VPN for address 10.200.200.155
-- User and password from Passpack entry "ABC"
+- XCode - 8.2
+- Android Studio  - 2.3.3
+- Node.JS - 6.5.0
+- Yarn - 0.24.6
 
 ## Running the Project
 
-_List instructions for running the project on Development environment_
+We advise using Yarn when running this project.
 
-- Run `npm install`
-- Run `gulp serve`
-- Etc.
+- Run `yarn install` / `npm install`
+- Run `yarn start:ios` / `npm start:ios` for iOS version
+- Run `yarn start:android` / `npm start:android` for Android version
+
+*Important*: for the Android Version you may need to follow the steps listed on: 
+- [React Native - Getting Started - Android Development Environment](https://facebook.github.io/react-native/docs/getting-started.html#android-development-environment)
+- [React Native - Getting Started - Preparing the Android Device](https://facebook.github.io/react-native/docs/getting-started.html#preparing-the-android-device)
+
+The corresponding emulator should be automatically opened.
+
+### Troubleshooting
+
+- If the project fails to run, try closing the React packager (terminal window that should open up automatically) and clean its cache by running `./node_modules/react-native/packager/packager.sh start --reset-cache`.
 
 ## Architecture Overview
 
@@ -51,17 +54,6 @@ _Give instructions on how to deploy the app/server for production and Homologati
 ## External components
 
 _List all external components of the project and their versions. Highlight any technical issues with them and explain the use of the less obvious ones. For more complicated environments (i.e. complex servers), you can use an auxiliary documentation on Docs/COMPONENTS.md, pasting the link here._
-
-- AFNetworking - 2.5.0
-- PonyDebugger - 0.4.0
-- TQTStylesheets - ~> 0.1.0
-- iCarousel - 1.8.1
-
-There is a problem with iCarousel versions 1.9.0+, that don't support something we need. This way, we kept the version 1.8.1.
-
-- XCDYouTubeKit - ~> 2.4.1
-
-Used for playing YouTube videos.
 
 ## Main technical issues and debts
 

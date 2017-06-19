@@ -17,7 +17,12 @@ setInterval(() => {
   timerStore.tick();
 }, 1000);
 
-export default class App extends Component<any, any> {
+export class Login extends Component<any, any> {
+
+  static navigationOptions = {
+    title: 'Login',
+  };
+
 
   onLoginPressed() {
     let http = new HttpClient();
@@ -25,6 +30,11 @@ export default class App extends Component<any, any> {
     .post('authenticate', { clientID: 'appClient',  clientSecret: this.state.password })
     .then(success => console.log(success))
     .catch(error => console.log(error));
+  }
+
+  onSignUpPressed() {
+    const { navigate } = this.props.navigation;
+    navigate('SignUp');
   }
 
   render() {
@@ -49,7 +59,13 @@ export default class App extends Component<any, any> {
           secureTextEntry={true}
           onChangeText={(text) => this.setState({password: text})} />
 
-        <Button title='Entrar' onPress={() => this.onLoginPressed()}/>
+        <View style={styles.buttonContainer}>
+          <Button title='Entrar' onPress={() => this.onLoginPressed()}/>
+        </View>
+
+        <View style={styles.buttonContainer}>
+          <Button title='Cadastrar' onPress={() => this.onSignUpPressed()}/>
+        </View>
 
         <Timer />
 
@@ -78,6 +94,9 @@ const styles = StyleSheet.create({
     height: 40,
     borderWidth: 1,
     margin: 8,
+    padding: 8,
+  },
+  buttonContainer: {
     padding: 8,
   },
 });

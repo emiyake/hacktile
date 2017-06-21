@@ -28,7 +28,7 @@ export class Orders extends Component<any, any> {
 
   private onLoginPressed() {
     const { navigate } = this.props.navigation;
-    navigate('SignUp');
+    navigate('Login');
   }
 }
 

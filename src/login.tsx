@@ -10,6 +10,7 @@ import { Timer, TimerStore } from './timer';
 
 import { HttpClient } from './core/http-client';
 import { Provider } from 'mobx-react';
+import { Subscription } from 'rxjs/Subscription';
 
 const timerStore = new TimerStore();
 
@@ -23,13 +24,17 @@ export class Login extends Component<any, any> {
     title: 'Login',
   };
 
+  private subscriptions: Subscription[] = [];
 
   onLoginPressed() {
     let http = new HttpClient();
-    http
-    .post('authenticate', { clientID: 'appClient',  clientSecret: this.state.password })
-    .then(success => console.log(success))
-    .catch(error => console.log(error));
+    this.subscriptions.push(
+      http.post('authenticate', { clientID: 'appClient',  clientSecret: this.state.password })
+      .subscribe(
+        success => console.log(success),
+        error => console.log(error),
+      ),
+    );
   }
 
   onSignUpPressed() {
@@ -72,6 +77,10 @@ export class Login extends Component<any, any> {
       </View>
       </Provider>
     );
+  }
+
+  componentWillUnmount?() {
+    this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
 
 }

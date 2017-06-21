@@ -1,23 +1,29 @@
-import React, { Component } from 'react';
 import {
+  Button,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
+import React, { Component } from 'react';
 
-export class Categories extends Component<any, any> {
+export class Specialties extends Component<any, any> {
 
   static navigationOptions = {
-    title: 'Categories',
-    tabBarLabel: 'Specialties',
+    title: 'Specialties',
   };
+
+  onCategoriesPressed() {
+    const { navigate } = this.props.navigation;
+    navigate('Categories');
+  }
 
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>
-          Categories!
+          Specialties!
         </Text>
+        <Button title='Categories' onPress={() => this.onCategoriesPressed()}/>
       </View>
     );
   }

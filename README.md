@@ -21,17 +21,31 @@
 ## Development Environment Setup
 
 - XCode - 8.2
-- Android Studio  - 2.3.3
+- Android Studio - 2.3.3
 - Node.JS - 6.5.0
 - Yarn - 0.24.6
+- Watchman - 4.7.0
+
+## Project Main Dependencies
+
+- [React Native](https://facebook.github.io/react-native/) - for hybrid development
+- [Typescript](https://www.typescriptlang.org/) - for typing
+- [MobX](https://github.com/mobxjs/mobx) - for state management
+- [React Navigation](https://reactnavigation.org/) - to manage app navigation / routing
+- [Apollo Client](https://github.com/apollographql/apollo-client) - to connect with the GraphQL API
+
+## Setup
+
+(This instructions assume you have [brew](https://brew.sh/), [node](https://nodejs.org/en/) and are using [yarn](https://yarnpkg.com/en/docs/cli/install) as the node package manager)
+
+- Install Watchman `brew install watchman`
+- Install the react-native CLI `npm install -g react-native-cli`
+- Run `yarn install` to install the project's dependencies (please, use Yarn when running this project, so we can keep `yarn.lock` updated)
 
 ## Running the Project
 
-We advise using Yarn when running this project.
-
-- Run `yarn install` / `npm install`
-- Run `yarn start:ios` / `npm start:ios` for iOS version
-- Run `yarn start:android` / `npm start:android` for Android version
+- Run `yarn start:ios` for iOS version
+- Run `yarn start:android` for Android version
 
 *Important*: for the Android Version you may need to follow the steps listed on: 
 - [React Native - Getting Started - Android Development Environment](https://facebook.github.io/react-native/docs/getting-started.html#android-development-environment)
@@ -39,9 +53,15 @@ We advise using Yarn when running this project.
 
 The corresponding emulator should be automatically opened.
 
-### Troubleshooting
+## Troubleshooting
 
-- If the project fails to run, try closing the React packager (terminal window that should open up automatically) and clean its cache by running `./node_modules/react-native/packager/packager.sh start --reset-cache`.
+### Built app failing to run
+Examples:
+`Could not find index.<platform>.js`
+
+- Please, check your `watchman` version. (The tested version is listed [here](Development-Environment-Setup))
+
+- Try closing the React packager (terminal window that should open up automatically) and clean its cache by running `./node_modules/react-native/packager/packager.sh start --reset-cache`.
 
 ## Architecture Overview
 

@@ -1,14 +1,6 @@
-import { Basket } from './basket';
-import { CategoriesNavigator } from './categoriesNavigator';
-import { Home } from './home';
-import { OrdersNavigator } from './ordersNavigator';
-import { Settings } from './settings';
-import { TabNavigator } from 'react-navigation';
+import React from 'react';
+import { TabNav } from './tabbarNavigator';
 
-export const App = TabNavigator({
-  Home: { screen:  Home},
-  Specialties: { screen: CategoriesNavigator},
-  Basket: { screen: Basket },
-  Orders: { screen: OrdersNavigator },
-  Settings: { screen: Settings },
-}, { tabBarPosition: 'bottom', backBehavior: 'none' });
+export const App = () => (
+  <TabNav />
+);

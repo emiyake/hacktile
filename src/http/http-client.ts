@@ -23,14 +23,11 @@ export class HttpClient {
   }
 
   private extractData(res: Response): Observable<any> {
-    console.log(res);
     let json = res.json();
     return Observable.from(json);
   }
 
   private handleError(error: any) {
-    console.log('error');
-    console.log(error);
     if (error == null) {
       return Observable.throw('Erro durante requisição.');
     }

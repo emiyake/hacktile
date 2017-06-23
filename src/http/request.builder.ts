@@ -56,7 +56,6 @@ export class RequestBuilder {
     }
 
     let options: RequestInit = { method, headers, body };
-    console.log(options);
     return new Request(url, options);
   }
 }

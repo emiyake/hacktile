@@ -5,10 +5,13 @@
   "scripts": {
     "build": "npm run clean && npm run tsc --",
     "clean": "rimraf dist",
+    "graphql-schema": "apollo-codegen introspect-schema https://labinhands-api-dev.herokuapp.com/graphql --output src/app/models/graphql.schema.json",
+    "graphql-generate-types": "apollo-codegen generate src/**/*.graphql --schema src/app/models/graphql.schema.json --target typescript --output src/app/models/graphql.schema.ts",
     "lint": "tslint src/**/*.ts",
+    "prestart": "npm run graphql-schema && npm run graphql-generate-types",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "start:android": "npm run build && concurrently -r 'npm run watch' 'react-native run-android'",
-    "start:ios": "npm run build && concurrently -r 'npm run watch' 'react-native run-ios'",
+    "start:android": "npm run lint && npm run build && concurrently -r 'npm run watch' 'react-native run-android'",
+    "start:ios": "npm run lint && npm run build && concurrently -r 'npm run watch' 'react-native run-ios'",
     "test": "jest",
     "tsc": "tsc",
     "watch": "npm run build -- -w"
@@ -17,6 +20,7 @@
     "@types/react": "15.0.28",
     "@types/react-native": "0.44.10",
     "@types/react-navigation": "1.0.9",
+    "apollo-codegen": "0.10.13",
     "concurrently": "3.4.0",
     "lodash.get": "4.4.2",
     "mobx": "3.1.15",

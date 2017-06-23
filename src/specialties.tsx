@@ -19,6 +19,7 @@ export class Specialties extends Component<any, any> {
   }
 
   render() {
+    //Logs results from GraphQL query
     console.log(this.props.data);
     if (this.props.data && this.props.data.Categories) {
       console.log(this.props.data.Categories.nodes.map(node => node.name));
@@ -27,9 +28,6 @@ export class Specialties extends Component<any, any> {
       <View style={styles.container}>
         <Text style={styles.title}>
           Specialties!
-        </Text>
-        <Text>
-          {this.props.data.toString()}
         </Text>
         <Button title='Categories' onPress={() => this.onCategoriesPressed()}/>
       </View>

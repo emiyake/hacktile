@@ -5,12 +5,12 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import { HeadersAppender, HttpClient, RequestBuilder } from './http';
+import { HeadersAppender, HttpClient, HttpInterceptor, RequestBuilder } from './http';
+import { Observable, Subscription } from 'rxjs';
 import React, { Component } from 'react';
 import { Timer, TimerStore } from './timer';
 
 import { Provider } from 'mobx-react';
-import { Subscription } from 'rxjs/Subscription';
 
 const timerStore = new TimerStore();
 
@@ -25,6 +25,18 @@ export class JsonHeadersAppender implements HeadersAppender {
   }
 }
 
+class SampleInterceptor implements HttpInterceptor {
+    before(request: Request): Request {
+      console.log('Before Interceptor');
+      return request;
+    }
+
+    after?(res: Observable<Response>): Observable<any> {
+      console.log('After Interceptor');
+      return res;
+    }
+}
+
 export class Login extends Component<any, any> {
 
   static navigationOptions = {
@@ -35,6 +47,7 @@ export class Login extends Component<any, any> {
 
   onLoginPressed() {
     let http = new HttpClient();
+    http.addInterceptor(new SampleInterceptor());
 
     let body = { clientID: 'appClient',  clientSecret: this.state.password };
     let headers = new JsonHeadersAppender();

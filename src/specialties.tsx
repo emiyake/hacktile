@@ -5,6 +5,7 @@ import {
   View,
 } from 'react-native';
 import React, { Component } from 'react';
+import { gql, graphql } from 'react-apollo';
 
 export class Specialties extends Component<any, any> {
 
@@ -18,10 +19,17 @@ export class Specialties extends Component<any, any> {
   }
 
   render() {
+    console.log(this.props.data);
+    if (this.props.data && this.props.data.Categories) {
+      console.log(this.props.data.Categories.nodes.map(node => node.name));
+    }
     return (
       <View style={styles.container}>
         <Text style={styles.title}>
           Specialties!
+        </Text>
+        <Text>
+          {this.props.data.toString()}
         </Text>
         <Button title='Categories' onPress={() => this.onCategoriesPressed()}/>
       </View>
@@ -41,5 +49,13 @@ const styles = StyleSheet.create({
     margin: 10,
   },
 });
+
+export const SpecialtiesWithData = graphql(gql`query {
+  Categories{
+    nodes{
+      name
+    }
+  }
+}`, {})(Specialties);
 
 

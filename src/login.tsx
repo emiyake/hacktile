@@ -5,10 +5,10 @@ import {
   TextInput,
   View,
 } from 'react-native';
+import { HeadersAppender, HttpClient, RequestBuilder } from './http';
 import React, { Component } from 'react';
 import { Timer, TimerStore } from './timer';
 
-import { HttpClient } from './core/http-client';
 import { Provider } from 'mobx-react';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -17,6 +17,13 @@ const timerStore = new TimerStore();
 setInterval(() => {
   timerStore.tick();
 }, 1000);
+
+export class JsonHeadersAppender implements HeadersAppender {
+  append(headers: Headers) {
+    headers.append('Accept', 'application/json');
+    headers.append('Content-Type', 'application/json');
+  }
+}
 
 export class Login extends Component<any, any> {
 
@@ -28,9 +35,15 @@ export class Login extends Component<any, any> {
 
   onLoginPressed() {
     let http = new HttpClient();
+
+    let body = { clientID: 'appClient',  clientSecret: this.state.password };
+    let headers = new JsonHeadersAppender();
+
+    let requestBuilder = new RequestBuilder('POST', 'https://lab-in-hands-app-piloto-dev.herokuapp.com/v1/', 'authenticate');
+    requestBuilder.withBody(body).withHeader(headers);
+
     this.subscriptions.push(
-      http.post('authenticate', { clientID: 'appClient',  clientSecret: this.state.password })
-      .subscribe(
+      http.request(requestBuilder).subscribe(
         success => console.log(success),
         error => console.log(error),
       ),

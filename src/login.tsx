@@ -5,10 +5,11 @@ import {
   TextInput,
   View,
 } from 'react-native';
+import { HeadersAppender, HttpClient, HttpInterceptor, RequestBuilder } from './http';
+import { Observable, Subscription } from 'rxjs';
 import React, { Component } from 'react';
 import { Timer, TimerStore } from './timer';
 
-import { HttpClient } from './core/http-client';
 import { Provider } from 'mobx-react';
 
 const timerStore = new TimerStore();
@@ -17,19 +18,49 @@ setInterval(() => {
   timerStore.tick();
 }, 1000);
 
+export class JsonHeadersAppender implements HeadersAppender {
+  append(headers: Headers) {
+    headers.append('Accept', 'application/json');
+    headers.append('Content-Type', 'application/json');
+  }
+}
+
+class SampleInterceptor implements HttpInterceptor {
+    before(request: Request): Request {
+      console.log('Before Interceptor');
+      return request;
+    }
+
+    after?(res: Observable<Response>): Observable<any> {
+      console.log('After Interceptor');
+      return res;
+    }
+}
+
 export class Login extends Component<any, any> {
 
   static navigationOptions = {
     title: 'Login',
   };
 
+  private subscriptions: Subscription[] = [];
 
   onLoginPressed() {
     let http = new HttpClient();
-    http
-    .post('authenticate', { clientID: 'appClient',  clientSecret: this.state.password })
-    .then(success => console.log(success))
-    .catch(error => console.log(error));
+    http.addInterceptor(new SampleInterceptor());
+
+    let body = { clientID: 'appClient',  clientSecret: this.state.password };
+    let headers = new JsonHeadersAppender();
+
+    let requestBuilder = new RequestBuilder('POST', 'https://lab-in-hands-app-piloto-dev.herokuapp.com/v1/', 'authenticate');
+    requestBuilder.withBody(body).withHeader(headers);
+
+    this.subscriptions.push(
+      http.request(requestBuilder).subscribe(
+        success => console.log(success),
+        error => console.log(error),
+      ),
+    );
   }
 
   onSignUpPressed() {
@@ -72,6 +103,10 @@ export class Login extends Component<any, any> {
       </View>
       </Provider>
     );
+  }
+
+  componentWillUnmount?() {
+    this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
 
 }

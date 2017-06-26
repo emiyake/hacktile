@@ -5,18 +5,17 @@ import {
   View,
 } from 'react-native';
 
-export class Categories extends Component<any, any> {
+export class Cart extends Component<any, any> {
 
   static navigationOptions = {
-    title: 'Categories',
-    tabBarLabel: 'Specialties',
+    title: 'Basket',
   };
 
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>
-          Categories!
+          Basket!
         </Text>
       </View>
     );

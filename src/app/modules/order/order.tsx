@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import React, { Component } from 'react';
 
-export class Orders extends Component<any, any> {
+export class Order extends Component<any, any> {
 
   static navigationOptions = {
     title: 'Orders',

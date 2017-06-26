@@ -1,9 +1,10 @@
 import {
-ApolloClient,
-createNetworkInterface,
+  ApolloClient,
+  createNetworkInterface,
 } from 'react-apollo';
 
 import { GraphqlInterceptor } from './graphql.interceptor';
+import { Observable } from 'rxjs/Observable';
 
 export class GraphqlClient {
 
@@ -36,5 +37,9 @@ export class GraphqlClient {
 
    public getGraphqlClient() {
      return this.apolloClient;
+   }
+
+   public query<T>(query, variables?) {
+     return Observable.from(this.apolloClient.query<T>({query, variables}));
    }
  }

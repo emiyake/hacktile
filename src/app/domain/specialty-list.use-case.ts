@@ -8,7 +8,9 @@ export class SpecialtyListUseCase {
   constructor(private graphqlClient: GraphqlClient) {}
 
   execute(): Observable<any> {
-    return this.graphqlClient.query<SpecialtyListQuery>(SpecialtyListQueryString).map(data => data.data.Specialties.nodes.map(node => node.name));
+    return this.graphqlClient
+           .query<SpecialtyListQuery>(SpecialtyListQueryString)
+           .map(data => data.data.Specialties.nodes.map(node => node.name));
   }
 
 }

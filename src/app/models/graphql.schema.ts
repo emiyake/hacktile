@@ -19,6 +19,22 @@ export type SpecialtiesOrderByDirectionEnum =
   "DESC"; // Descendant direction
 
 
+export type CategoriesListQueryVariables = {
+  specialtyId: number | null,
+};
+
+export type CategoriesListQuery = {
+  Specialty:  {
+    // Specialty categories
+    categories:  Array< {
+      // Category id
+      id: string,
+      // Category name
+      name: string,
+    } > | null,
+  } | null,
+};
+
 export type SpecialtyListQueryVariables = {
   limit: number | null,
   offset: number | null,

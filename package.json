@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "npm run clean && npm run tsc --",
+    "build": "npm run clean && npm run copy-resources && npm run tsc -- ",
     "clean": "rimraf dist",
     "graphql-schema": "apollo-codegen introspect-schema https://labinhands-api-dev.herokuapp.com/graphql --output src/app/models/graphql.schema.json",
     "graphql-generate-types": "apollo-codegen generate src/**/*.graphql.ts --schema src/app/models/graphql.schema.json --target typescript --output src/app/models/graphql.schema.ts",
@@ -14,7 +14,8 @@
     "start:ios": "npm run lint && npm run build && concurrently -r 'npm run watch' 'react-native run-ios'",
     "test": "jest",
     "tsc": "tsc",
-    "watch": "npm run build -- -w"
+    "watch": "npm run build -- -w",
+    "copy-resources": "copyup 'src/**/*.{jpg,jpeg,png,json}' 'dist/'"
   },
   "dependencies": {
     "@types/react": "15.0.28",
@@ -23,6 +24,7 @@
     "apollo-codegen": "0.13.1",
     "concurrently": "3.4.0",
     "lodash.get": "4.4.2",
+    "copyfiles": "^1.2.0",
     "mobx": "3.1.15",
     "mobx-react": "4.2.1",
     "react": "16.0.0-alpha.6",

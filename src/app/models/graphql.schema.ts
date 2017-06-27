@@ -1,6 +1,29 @@
 /* tslint:disable */
 //  This file was automatically generated and should not be edited.
 
+export type ProductsOrderingInputObjectType = {
+  sort: ProductsOrderByFieldEnum | null,
+  direction: ProductsOrderByDirectionEnum | null,
+};
+
+// List of available ordering fields.
+export type ProductsOrderByFieldEnum =
+  "id" | // Product id
+  "name" | // Product name
+  "code" | // Product code
+  "company" | // Product company
+  "activePrinciple" | // Product activePrinciple
+  "description" | // Product description
+  "featured" | // Product featured
+  "visible"; // Product visible
+
+
+// List of available ordering directions.
+export type ProductsOrderByDirectionEnum =
+  "ASC" | // Ascendent direction
+  "DESC"; // Descendant direction
+
+
 export type SpecialtiesOrderingInputObjectType = {
   sort: SpecialtiesOrderByFieldEnum | null,
   direction: SpecialtiesOrderByDirectionEnum | null,
@@ -31,6 +54,26 @@ export type CategoryListQuery = {
       id: string,
       // Category name
       name: string,
+    } > | null,
+  } | null,
+};
+
+export type ProductListQueryVariables = {
+  limit: number | null,
+  offset: number | null,
+  orderBy: Array< ProductsOrderingInputObjectType | null > | null,
+};
+
+export type ProductListQuery = {
+  Products:  {
+    // Array of elements
+    nodes:  Array< {
+      // Product name
+      name: string | null,
+      // Product id
+      id: string,
+      // Product company
+      company: string | null,
     } > | null,
   } | null,
 };

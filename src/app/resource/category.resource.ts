@@ -5,10 +5,10 @@ import {
   SubCategoryListQueryVariables,
 } from '../models/graphql.schema';
 
-import { CategoryListQueryString } from './category-list.graphql';
 import { GraphqlClient } from '../core';
 import { Observable } from 'rxjs';
-import { SubCategoryListQueryString } from './subcategory-list.graphql';
+import { categoryListQuery } from './category-list.graphql';
+import { subCategoryListQuery } from './subcategory-list.graphql';
 
 export class CategoryResource {
 
@@ -18,7 +18,7 @@ export class CategoryResource {
     let variables: CategoryListQueryVariables = { specialtyId: parentSpecialtyId};
 
     return this.graphqlClient
-           .query<CategoryListQuery>(CategoryListQueryString, variables)
+           .query<CategoryListQuery>(categoryListQuery, variables)
            .map(data => data.data.Specialty.categories);
   }
 
@@ -27,7 +27,7 @@ export class CategoryResource {
     let variables: SubCategoryListQueryVariables = { parentCategoryId };
 
     return this.graphqlClient
-           .query<SubCategoryListQuery>(SubCategoryListQueryString, variables)
+           .query<SubCategoryListQuery>(subCategoryListQuery, variables)
            .map(data => data.data.Category.children);
   }
 }

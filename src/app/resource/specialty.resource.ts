@@ -2,7 +2,7 @@ import { SpecialtyListQuery, SpecialtyListQueryVariables } from '../models/graph
 
 import { GraphqlClient } from '../core';
 import { Observable } from 'rxjs';
-import { SpecialtyListQueryString } from './specialty-list.graphql';
+import { specialtyListQuery } from './specialty-list.graphql';
 
 export class SpecialtyResource {
 
@@ -12,7 +12,7 @@ export class SpecialtyResource {
     let variables: SpecialtyListQueryVariables = { limit: null, offset: null, orderBy: [{ sort: 'name', direction: 'ASC'}]};
 
     return this.graphqlClient
-           .query<SpecialtyListQuery>(SpecialtyListQueryString, variables)
+           .query<SpecialtyListQuery>(specialtyListQuery, variables)
            .map(data => data.data.Specialties.nodes);
   }
 

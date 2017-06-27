@@ -20,7 +20,7 @@ export class Specialty extends Component<any, any> {
   render() {
     let specialties = this.props.specialties ? this.props.specialties : [];
     let specialtyList = specialties.map((specialty, index) =>
-      <Text key={index}>{specialty}</Text>,
+      <Text key={index}>{specialty.name}</Text>,
     );
 
     return (
@@ -52,8 +52,8 @@ export class SpecialtyWithData extends Component<any, any> {
     let graphqlClient = new GraphqlClient('https://labinhands-api-dev.herokuapp.com/');
     let specialtyResource =  new SpecialtyResource(graphqlClient);
     let useCase = new SpecialtyListUseCase(specialtyResource);
-    useCase.execute().map(specialties => specialties.map(specialty => specialty.name)).subscribe(
-      specialtyNames => this.setState({specialties: specialtyNames}),
+    useCase.execute().subscribe(
+      specialties => this.setState({specialties}),
       error => console.log(error),
     );
   }

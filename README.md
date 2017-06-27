@@ -58,6 +58,7 @@ The corresponding emulator should be automatically opened.
 
 - Run `yarn graphql-schema` to update our local copy of the graphql schema.
 - Run `yarn graphql-generate-types` to generate the types based on your queries. Run it everytime you create a new query.
+(Queries must be created inside *.graphql.ts files to be properly converted and able to be used in the app)
 
 `yarn prestart` will run both commands in sequence.
 

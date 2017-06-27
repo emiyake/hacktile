@@ -72,6 +72,10 @@ Examples:
 
 - Try closing the React packager (terminal window that should open up automatically) and clean its cache by running `./node_modules/react-native/packager/packager.sh start --reset-cache`.
 
+### App fail after copy new asset file
+
+- After insert new asset file in the project, you should always restart the build (yarn start:ios / yarn start: android) and also the packeger.
+
 ## Architecture Overview
 
 _Provide an overview about the project's architecture, and the comunication with external servers and services. List all external communications and provide images and diagrams if necessary_

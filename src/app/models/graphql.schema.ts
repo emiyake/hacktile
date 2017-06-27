@@ -1,6 +1,34 @@
 /* tslint:disable */
 //  This file was automatically generated and should not be edited.
 
+export type OrdersOrderingInputObjectType = {
+  sort: OrdersOrderByFieldEnum | null,
+  direction: OrdersOrderByDirectionEnum | null,
+};
+
+// List of available ordering fields.
+export type OrdersOrderByFieldEnum =
+  "id" | // Order id
+  "code" | // Order code
+  "trackingId" | // Order tracking Id
+  "issueDate" | // Order issue date
+  "deliveryDate"; // Order delivery date
+
+
+// List of available ordering directions.
+export type OrdersOrderByDirectionEnum =
+  "ASC" | // Ascendent direction
+  "DESC"; // Descendant direction
+
+
+// Order status
+export type OrderStatusType =
+  "REGISTERED" | // Order Registered
+  "CONFIRMED" | // Order Confirmed, on its way
+  "DELIVERED" | // Order Delivered
+  "CANCELED"; // Order Canceled
+
+
 export type ProductsOrderingInputObjectType = {
   sort: ProductsOrderByFieldEnum | null,
   direction: ProductsOrderByDirectionEnum | null,
@@ -58,6 +86,34 @@ export type CategoryListQuery = {
   } | null,
 };
 
+export type OrderListQueryVariables = {
+  limit: number | null,
+  offset: number | null,
+  orderBy: Array< OrdersOrderingInputObjectType | null > | null,
+};
+
+export type OrderListQuery = {
+  Orders:  {
+    // Array of elements
+    nodes:  Array< {
+      // Order id
+      id: string,
+      // Order code
+      code: string | null,
+      // Order status
+      status: OrderStatusType | null,
+      // Order issue date
+      issueDate: string | null,
+      // Order delivery date
+      deliveryDate: string | null,
+    } > | null,
+    // Page information
+    pageInfo:  {
+      hasNextPage: boolean,
+    } | null,
+  } | null,
+};
+
 export type ProductListQueryVariables = {
   limit: number | null,
   offset: number | null,
@@ -75,6 +131,10 @@ export type ProductListQuery = {
       // Product company
       company: string | null,
     } > | null,
+    // Page information
+    pageInfo:  {
+      hasNextPage: boolean,
+    } | null,
   } | null,
 };
 

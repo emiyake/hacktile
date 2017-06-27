@@ -8,6 +8,9 @@ export const productListQuery = gql`
         id
         company
       }
+      pageInfo {
+        hasNextPage
+      }
     }
   }
 `;

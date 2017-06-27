@@ -5,8 +5,8 @@ export class ProductListUseCase {
 
   constructor(private resource: ProductResource) {}
 
-  execute(): Observable<any> {
-    return this.resource.list();
+  execute(page: number): Observable<any> {
+    return this.resource.list(page);
   }
 
 }

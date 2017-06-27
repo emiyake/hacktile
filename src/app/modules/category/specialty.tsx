@@ -11,13 +11,9 @@ import { SpecialtyListUseCase } from '../../domain';
 
 export class Specialty extends Component<any, any> {
 
-  static navigationOptions = {
-    title: 'Specialties',
-  };
-
   onCategoriesPressed() {
     const { navigate } = this.props.navigation;
-    navigate('Categories');
+    navigate('Category');
   }
 
   render() {
@@ -42,6 +38,10 @@ export class Specialty extends Component<any, any> {
 
 export class SpecialtyWithData extends Component<any, any> {
 
+  static navigationOptions = {
+    title: 'Specialties',
+  };
+
   constructor(props) {
     super(props);
     this.state = { specialties: []};
@@ -58,7 +58,7 @@ export class SpecialtyWithData extends Component<any, any> {
 
   render() {
     return (
-      <Specialty specialties={this.state.specialties} />
+      <Specialty specialties={this.state.specialties} navigation={this.props.navigation} />
     );
   }
 }

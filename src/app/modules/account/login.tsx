@@ -5,7 +5,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import { HeadersAppender, HttpClient, HttpInterceptor, RequestBuilder } from './http';
+import { HeadersAppender, HttpClient, HttpInterceptor, RequestBuilder } from '../../core/http';
 import { Observable, Subscription } from 'rxjs';
 import React, { Component } from 'react';
 import { Timer, TimerStore } from './timer';

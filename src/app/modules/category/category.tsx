@@ -5,7 +5,7 @@ import {
   View,
 } from 'react-native';
 
-export class Categories extends Component<any, any> {
+export class Category extends Component<any, any> {
 
   static navigationOptions = {
     title: 'Categories',

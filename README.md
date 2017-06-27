@@ -32,7 +32,8 @@
 - [Typescript](https://www.typescriptlang.org/) - for typing
 - [MobX](https://github.com/mobxjs/mobx) - for state management
 - [React Navigation](https://reactnavigation.org/) - to manage app navigation / routing
-- [Apollo Client](https://github.com/apollographql/apollo-client) - to connect with the GraphQL API
+- [React Apollo](https://github.com/apollographql/react-apollo) - to connect with the GraphQL API
+- [Apollo Codegen](https://github.com/apollographql/apollo-codegen) - to autogenerate the query types
 
 ## Setup
 
@@ -52,6 +53,14 @@
 - [React Native - Getting Started - Preparing the Android Device](https://facebook.github.io/react-native/docs/getting-started.html#preparing-the-android-device)
 
 The corresponding emulator should be automatically opened.
+
+## Managing the GraphQL Schema
+
+- Run `yarn graphql-schema` to update our local copy of the graphql schema.
+- Run `yarn graphql-generate-types` to generate the types based on your queries. Run it everytime you create a new query.
+(Queries must be created inside *.graphql.ts files to be properly converted and able to be used in the app)
+
+`yarn prestart` will run both commands in sequence.
 
 ## Troubleshooting
 

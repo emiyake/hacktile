@@ -5,6 +5,7 @@ export const SpecialtyListQueryString = gql`
     Specialties(limit: $limit, offset: $offset, orderBy: $orderBy){
       nodes {
         name
+        id
       }
     }
   }

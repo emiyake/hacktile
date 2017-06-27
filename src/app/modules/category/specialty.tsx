@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 
 import { GraphqlClient } from '../../core';
 import { SpecialtyListUseCase } from '../../domain';
+import { SpecialtyResource } from '../../resource';
 
 export class Specialty extends Component<any, any> {
 
@@ -49,9 +50,10 @@ export class SpecialtyWithData extends Component<any, any> {
 
   componentDidMount() {
     let graphqlClient = new GraphqlClient('https://labinhands-api-dev.herokuapp.com/');
-    let useCase = new SpecialtyListUseCase(graphqlClient);
-    useCase.execute().subscribe(
-      specialties => this.setState({specialties}),
+    let specialtyResource =  new SpecialtyResource(graphqlClient);
+    let useCase = new SpecialtyListUseCase(specialtyResource);
+    useCase.execute().map(specialties => specialties.map(specialty => specialty.name)).subscribe(
+      specialtyNames => this.setState({specialties: specialtyNames}),
       error => console.log(error),
     );
   }

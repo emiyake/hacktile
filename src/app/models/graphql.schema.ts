@@ -47,6 +47,8 @@ export type SpecialtyListQuery = {
     nodes:  Array< {
       // Specialty name
       name: string | null,
+      // Specialty id
+      id: string,
     } > | null,
   } | null,
 };

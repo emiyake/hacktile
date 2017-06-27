@@ -1,7 +1,8 @@
-import { ProductListQuery, ProductListQueryVariables } from '../models/graphql.schema';
+import { ProductDetailQuery, ProductDetailQueryVariables, ProductListQuery, ProductListQueryVariables } from '../models/graphql.schema';
 
 import { GraphqlClient } from '../core';
 import { Observable } from 'rxjs';
+import { productDetailQuery } from './product-detail.graphql';
 import { productListQuery } from './product-list.graphql';
 
 const PAGE_WINDOW = 20;
@@ -20,6 +21,13 @@ export class ProductResource {
     return this.graphqlClient
            .query<ProductListQuery>(productListQuery, variables)
            .map(data => data.data.Products.nodes);
+  }
+
+  fetch(id: number): Observable<any> {
+    let variables: ProductDetailQueryVariables = { id };
+    return this.graphqlClient
+           .query<ProductDetailQuery>(productDetailQuery, variables)
+           .map(data => data.data.Product);
   }
 
 }

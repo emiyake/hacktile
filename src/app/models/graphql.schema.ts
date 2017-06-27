@@ -142,6 +142,34 @@ export type OrderListQuery = {
   } | null,
 };
 
+export type ProductDetailQueryVariables = {
+  id: number | null,
+};
+
+export type ProductDetailQuery = {
+  Product:  {
+    // Product id
+    id: string,
+    // Product name
+    name: string | null,
+    // Product code
+    code: string | null,
+    // Product company
+    company: string | null,
+    // Product activePrinciple
+    activePrinciple: string | null,
+    // Product description
+    description: string | null,
+    // Product Links
+    links:  Array< {
+      // Product Link link
+      link: string,
+      // Product Link sequence
+      sequence: number,
+    } > | null,
+  } | null,
+};
+
 export type ProductListQueryVariables = {
   limit: number | null,
   offset: number | null,

@@ -1,3 +1,4 @@
+export * from './address.resource';
 export * from './category.resource';
 export * from './product.resource';
 export * from './order.resource';

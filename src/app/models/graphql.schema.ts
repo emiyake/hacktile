@@ -70,6 +70,34 @@ export type SpecialtiesOrderByDirectionEnum =
   "DESC"; // Descendant direction
 
 
+export type AddressListQuery = {
+  Addresses:  {
+    // Array of elements
+    nodes:  Array< {
+      // Address id
+      id: string,
+      // Address zip
+      zip: string | null,
+      // Address street
+      street: string | null,
+      // Address number
+      number: string | null,
+      // Address additional details
+      additionalDetails: string | null,
+      // Address neighborhood
+      neighborhood: string | null,
+      // Address city
+      city: string | null,
+      // Address state
+      state: string | null,
+      // Address mobile phone number
+      mobilePhoneNumber: string | null,
+      // Address phone number
+      phoneNumber: string | null,
+    } > | null,
+  } | null,
+};
+
 export type CategoryListQueryVariables = {
   specialtyId: number | null,
 };

@@ -1,4 +1,4 @@
-import { Colors, Spacing, FontSize } from './../style/variables';
+import { colors, spacing, fontSize } from './../style/variables';
 import { StyleSheet } from 'react-native';
 
 const HEIGHT = 50;
@@ -16,28 +16,28 @@ export const styles = StyleSheet.create({
   },
   primaryButton: {
     borderRadius: HEIGHT / 6,
-    backgroundColor: Colors.color_blue,
+    backgroundColor: colors.color_blue,
   },
   secondaryBorder: {
     borderWidth: 1,
-    borderColor: Colors.color_blue,
+    borderColor: colors.color_blue,
     borderRadius: HEIGHT / 2,
   },
   secondaryButton: {
     borderRadius: HEIGHT / 6,
-    backgroundColor: Colors.color_white,
+    backgroundColor: colors.color_white,
   },
   icon: {
-    marginRight: Spacing.spacing_regular,
+    marginRight: spacing.spacing_regular,
   },
   caption: {
     letterSpacing: 1,
-    fontSize: FontSize.font_size_small,
+    fontSize: fontSize.font_size_small,
   },
   primaryCaption: {
-    color: Colors.color_white,
+    color: colors.color_white,
   },
   secondaryCaption: {
-    color: Colors.color_dark_blue
+    color: colors.color_dark_blue
   }
 });

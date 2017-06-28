@@ -3,12 +3,12 @@ const FONT_FAMILY = {
     MONTSERRAT: 'Montserrat-Regular',
     NOTOSERIF: 'NotoSerif',
 }
-export const FontFamily = {
+export const fontFamily = {
     font_family_primary: FONT_FAMILY.MONTSERRAT,
     font_family_secondary: FONT_FAMILY.NOTOSERIF
 };
 
-export const FontSize = {
+export const fontSize = {
     font_size_x_small: 11,
     font_size_small: 12,
     font_size_medium: 14,
@@ -16,7 +16,7 @@ export const FontSize = {
     font_size_x_large: 18,
 };
 
-export const Colors = {
+export const colors = {
     color_blue: '#2B8FE5',
     color_dark_blue: '#00518F',
     color_white: '#FFF',
@@ -30,11 +30,11 @@ export const Colors = {
     color_red: '#FF2D55',
 }
 
-export const FontWeight = {
+export const fontWeight = {
     font_weight_bold : 'bold'
 }
 
-export const Spacing = {
+export const spacing = {
     spacing_x_small: 4,
     spacing_small: 8,
     spacing_regular: 12,

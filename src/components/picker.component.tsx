@@ -1,7 +1,7 @@
 import Picker from 'react-native-picker';
 import React, { Component } from 'React';
 import { CaptionError, Label } from './../style/title';
-import { Colors } from './../style/variables';
+import { colors } from './../style/variables';
 import { styles } from './picker.component.style';
 import {
   View,
@@ -62,12 +62,12 @@ export class PickerComponent extends Component<any,any> {
 
         let isErrorMessage;
         let isErrorStyle;
-        let underLineColor = Colors.color_lightest_gray;
+        let underLineColor = colors.color_lightest_gray;
 
         if(this.props.isError){
             isErrorStyle = styles.inputError;
             isErrorMessage = <CaptionError>{this.props.errorMessage}</CaptionError>
-            underLineColor = Colors.color_red
+            underLineColor = colors.color_red
         }
         return (
             <View style={styles.container}>

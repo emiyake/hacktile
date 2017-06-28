@@ -1,19 +1,19 @@
-import { Colors, FontFamily, Spacing } from './../style/variables';
+import { colors, fontFamily, spacing } from './../style/variables';
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.color_white,
+    backgroundColor: colors.color_white,
     width: 90,
     height: 72,
     alignItems: 'center',
     borderRadius: 5
   },
   text: {
-      fontFamily: FontFamily.font_family_primary,
+      fontFamily: fontFamily.font_family_primary,
       fontSize: 10,
-      color: Colors.color_white,
-      marginTop: Spacing.spacing_x_small
+      color: colors.color_white,
+      marginTop: spacing.spacing_x_small
   },
   productImagePlaceholder: {
     width: '100%', 

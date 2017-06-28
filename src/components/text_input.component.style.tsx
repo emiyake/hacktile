@@ -1,24 +1,24 @@
-import { Colors, Spacing } from './../style/variables';
+import { colors, spacing } from './../style/variables';
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
-    margin: Spacing.spacing_medium,
+    margin: spacing.spacing_medium,
   },
   inputText:{
     height: 40, 
     borderWidth:0,
-    marginTop: Spacing.spacing_x_small,
-    marginBottom: Spacing.spacing_x_small
+    marginTop: spacing.spacing_x_small,
+    marginBottom: spacing.spacing_x_small
   },
   inputTextiOS:{
-    borderColor: Colors.color_light_gray, 
+    borderColor: colors.color_light_gray, 
     borderWidth: 1, 
     borderRadius:5,
   },
   inputError:{
-      borderColor: Colors.color_red, 
+      borderColor: colors.color_red, 
   }
 
 });

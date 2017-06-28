@@ -1,10 +1,10 @@
-import { Colors, FontFamily, Spacing } from './../style/variables';
+import { colors, fontFamily, spacing } from './../style/variables';
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    padding: Spacing.spacing_medium,
-    backgroundColor: Colors.color_blue,
+    padding: spacing.spacing_medium,
+    backgroundColor: colors.color_blue,
     width: 90,
     height: 72,
     alignItems: 'center',
@@ -12,10 +12,10 @@ export const styles = StyleSheet.create({
     borderRadius: 5
   },
   text: {
-      fontFamily: FontFamily.font_family_primary,
+      fontFamily: fontFamily.font_family_primary,
       fontSize: 10,
-      color: Colors.color_white,
-      marginTop: Spacing.spacing_x_small
+      color: colors.color_white,
+      marginTop: spacing.spacing_x_small
   }
 
 });

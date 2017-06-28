@@ -1,4 +1,4 @@
-import { Colors, Spacing } from './../style/variables';
+import { colors, spacing } from './../style/variables';
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
@@ -9,14 +9,14 @@ export const styles = StyleSheet.create({
     height: 40,
     borderRadius: 50,
     borderWidth: 1,
-    borderColor: Colors.color_gray,
+    borderColor: colors.color_gray,
     justifyContent:'center', 
     alignItems: 'center'
 
   },
  textContainer: {
-     paddingLeft: Spacing.spacing_medium, 
-     paddingRight: Spacing.spacing_medium
+     paddingLeft: spacing.spacing_medium, 
+     paddingRight: spacing.spacing_medium
  },
  imageContainer:{
    width: 16,

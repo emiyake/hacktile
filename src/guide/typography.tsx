@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FontFamily, FontSize } from './../style/variables';
+import { fontFamily, fontSize } from './../style/variables';
 import {
   Text,
   StyleSheet,
@@ -33,14 +33,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   montserrat: {
-    fontSize: FontSize.font_size_large,
+    fontSize: fontSize.font_size_large,
     margin: 10,
-    fontFamily: FontFamily.font_family_primary
+    fontFamily: fontFamily.font_family_primary
   },
   noto_regular: {
-    fontSize: FontSize.font_size_medium,
+    fontSize: fontSize.font_size_medium,
     margin: 10,
-    fontFamily: FontFamily.font_family_secondary
+    fontFamily: fontFamily.font_family_secondary
   }
   
 });

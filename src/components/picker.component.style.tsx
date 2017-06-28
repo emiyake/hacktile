@@ -1,14 +1,14 @@
-import { Colors, Spacing } from './../style/variables';
+import { colors, spacing } from './../style/variables';
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
-    margin: Spacing.spacing_medium,
+    margin: spacing.spacing_medium,
   },
  textContainer: {
-     paddingLeft: Spacing.spacing_medium, 
-     paddingRight: Spacing.spacing_medium
+     paddingLeft: spacing.spacing_medium, 
+     paddingRight: spacing.spacing_medium
  },
  imageContainer:{
    width: 16,
@@ -16,23 +16,23 @@ export const styles = StyleSheet.create({
    justifyContent: 'center'
  },
  pickerContainer:{
-   marginTop: Spacing.spacing_x_small,
-   marginBottom: Spacing.spacing_x_small,
+   marginTop: spacing.spacing_x_small,
+   marginBottom: spacing.spacing_x_small,
  },
  pickeriOS:{
-   paddingLeft: Spacing.spacing_medium, 
-   paddingRight: Spacing.spacing_medium,
+   paddingLeft: spacing.spacing_medium, 
+   paddingRight: spacing.spacing_medium,
    height: 40, 
    width: '100%', 
    borderWidth: 1,  
    borderRadius:5, 
-   borderColor:Colors.color_light_gray, 
+   borderColor:colors.color_light_gray, 
    flexDirection:'row', 
    alignItems:'center', 
    justifyContent: 'space-between'
  },
  inputError:{
-      borderColor: Colors.color_red, 
+      borderColor: colors.color_red, 
   }
 
 });

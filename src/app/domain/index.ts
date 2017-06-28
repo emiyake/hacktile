@@ -1,5 +1,6 @@
 export * from './address-list.use-case';
 export * from './category-list.use-case';
+export * from './doctor-detail.use-case';
 export * from './order-detail.use-case';
 export * from './order-list.use-case';
 export * from './product-detail.use-case';

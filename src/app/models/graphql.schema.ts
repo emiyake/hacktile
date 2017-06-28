@@ -114,6 +114,42 @@ export type CategoryListQuery = {
   } | null,
 };
 
+export type DoctorDetailQueryVariables = {
+  id: number | null,
+};
+
+export type DoctorDetailQuery = {
+  Doctor:  {
+    // Doctor name
+    name: string | null,
+    // Doctor email
+    email: string | null,
+    // Doctor birthdate
+    birthdate: string | null,
+    // Doctor CRM
+    crm:  {
+      // CRM number
+      number: string,
+      // CRM state
+      state: string,
+    } | null,
+    // Doctor Identification
+    identification:  {
+      // Identification type
+      type: string,
+      // Identification number
+      number: string,
+    } | null,
+    // Doctor Specialty
+    specialty:  {
+      // Specialty id
+      id: string,
+      // Specialty name
+      name: string | null,
+    } | null,
+  } | null,
+};
+
 export type OrderDetailQueryVariables = {
   id: number | null,
 };

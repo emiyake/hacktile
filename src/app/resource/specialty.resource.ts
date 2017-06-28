@@ -2,7 +2,7 @@ import { SpecialtyListQuery, SpecialtyListQueryVariables } from '../models/graph
 
 import { GraphqlClient } from '../core';
 import { Observable } from 'rxjs';
-import { specialtyListQuery } from './specialty-list.graphql';
+import { specialtyListQuery } from './queries';
 
 export class SpecialtyResource {
 

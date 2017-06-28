@@ -1,7 +1,7 @@
 import { AddressListQuery } from '../models/graphql.schema';
 import { GraphqlClient } from '../core';
 import { Observable } from 'rxjs';
-import { addressListQuery } from './address-list.graphql';
+import { addressListQuery } from './queries';
 
 export class AddressResource {
 

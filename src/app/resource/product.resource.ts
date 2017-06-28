@@ -1,9 +1,8 @@
 import { ProductDetailQuery, ProductDetailQueryVariables, ProductListQuery, ProductListQueryVariables } from '../models/graphql.schema';
+import { productDetailQuery, productListQuery } from './queries';
 
 import { GraphqlClient } from '../core';
 import { Observable } from 'rxjs';
-import { productDetailQuery } from './product-detail.graphql';
-import { productListQuery } from './product-list.graphql';
 
 const PAGE_WINDOW = 20;
 

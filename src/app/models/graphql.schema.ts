@@ -1,6 +1,14 @@
 /* tslint:disable */
 //  This file was automatically generated and should not be edited.
 
+// Order status
+export type OrderStatusType =
+  "REGISTERED" | // Order Registered
+  "CONFIRMED" | // Order Confirmed, on its way
+  "DELIVERED" | // Order Delivered
+  "CANCELED"; // Order Canceled
+
+
 export type OrdersOrderingInputObjectType = {
   sort: OrdersOrderByFieldEnum | null,
   direction: OrdersOrderByDirectionEnum | null,
@@ -19,14 +27,6 @@ export type OrdersOrderByFieldEnum =
 export type OrdersOrderByDirectionEnum =
   "ASC" | // Ascendent direction
   "DESC"; // Descendant direction
-
-
-// Order status
-export type OrderStatusType =
-  "REGISTERED" | // Order Registered
-  "CONFIRMED" | // Order Confirmed, on its way
-  "DELIVERED" | // Order Delivered
-  "CANCELED"; // Order Canceled
 
 
 export type ProductsOrderingInputObjectType = {
@@ -111,6 +111,58 @@ export type CategoryListQuery = {
       // Category name
       name: string,
     } > | null,
+  } | null,
+};
+
+export type OrderDetailQueryVariables = {
+  id: number | null,
+};
+
+export type OrderDetailQuery = {
+  Order:  {
+    // Order id
+    id: string,
+    // Order code
+    code: string | null,
+    // Order tracking Id
+    trackingId: string | null,
+    // Order status
+    status: OrderStatusType | null,
+    // Order Links
+    products:  Array< {
+      // Order Product quantity
+      quantity: number,
+      // Order link
+      productPresentation:  {
+        // Product presentation description
+        description: string,
+      },
+    } > | null,
+    // Order delivery address
+    deliveryAddress:  {
+      // Address zip
+      zip: string | null,
+      // Address street
+      street: string | null,
+      // Address number
+      number: string | null,
+      // Address additional details
+      additionalDetails: string | null,
+      // Address neighborhood
+      neighborhood: string | null,
+      // Address city
+      city: string | null,
+      // Address state
+      state: string | null,
+      // Address mobile phone number
+      mobilePhoneNumber: string | null,
+      // Address phone number
+      phoneNumber: string | null,
+    } | null,
+    // Order issue date
+    issueDate: string | null,
+    // Order delivery date
+    deliveryDate: string | null,
   } | null,
 };
 

@@ -4,11 +4,10 @@ import {
   SubCategoryListQuery,
   SubCategoryListQueryVariables,
 } from '../models/graphql.schema';
+import { categoryListQuery, subCategoryListQuery } from './queries';
 
 import { GraphqlClient } from '../core';
 import { Observable } from 'rxjs';
-import { categoryListQuery } from './category-list.graphql';
-import { subCategoryListQuery } from './subcategory-list.graphql';
 
 export class CategoryResource {
 

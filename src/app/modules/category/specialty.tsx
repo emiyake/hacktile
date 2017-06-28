@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 
 import { GraphqlClient } from '../../core';
 import { SpecialtyListUseCase } from '../../domain';
+import { SpecialtyResource } from '../../resource';
 
 export class Specialty extends Component<any, any> {
 
@@ -19,7 +20,7 @@ export class Specialty extends Component<any, any> {
   render() {
     let specialties = this.props.specialties ? this.props.specialties : [];
     let specialtyList = specialties.map((specialty, index) =>
-      <Text key={index}>{specialty}</Text>,
+      <Text key={index}>{specialty.name}</Text>,
     );
 
     return (
@@ -49,7 +50,8 @@ export class SpecialtyWithData extends Component<any, any> {
 
   componentDidMount() {
     let graphqlClient = new GraphqlClient('https://labinhands-api-dev.herokuapp.com/');
-    let useCase = new SpecialtyListUseCase(graphqlClient);
+    let specialtyResource =  new SpecialtyResource(graphqlClient);
+    let useCase = new SpecialtyListUseCase(specialtyResource);
     useCase.execute().subscribe(
       specialties => this.setState({specialties}),
       error => console.log(error),

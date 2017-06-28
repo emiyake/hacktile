@@ -1,9 +1,9 @@
 import { gql } from 'react-apollo';
 
 export const addressListQuery = gql`
-  query AddressList {
-    Addresses {
-      nodes {
+  query AddressesList($doctorId: Int) {
+    Doctor(id: $doctorId) {
+  		addesses {
         id
         zip
         street
@@ -13,7 +13,7 @@ export const addressListQuery = gql`
         city
         state
         mobilePhoneNumber
-        phoneNumber
+       	phoneNumber
       }
     }
   }

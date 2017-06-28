@@ -5,8 +5,8 @@ export class AddressListUseCase {
 
   constructor(private resource: AddressResource) {}
 
-  execute(): Observable<any> {
-    return this.resource.list();
+  execute(doctorId: number): Observable<any> {
+    return this.resource.list(doctorId);
   }
 
 }

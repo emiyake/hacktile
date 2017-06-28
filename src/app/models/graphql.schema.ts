@@ -70,10 +70,14 @@ export type SpecialtiesOrderByDirectionEnum =
   "DESC"; // Descendant direction
 
 
-export type AddressListQuery = {
-  Addresses:  {
-    // Array of elements
-    nodes:  Array< {
+export type AddressesListQueryVariables = {
+  doctorId: number | null,
+};
+
+export type AddressesListQuery = {
+  Doctor:  {
+    // Doctor Addresses
+    addesses:  Array< {
       // Address id
       id: string,
       // Address zip

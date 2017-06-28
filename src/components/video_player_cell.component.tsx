@@ -1,5 +1,4 @@
 import {
-  View,
   Image,
   TouchableOpacity,
 } from 'react-native';

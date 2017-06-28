@@ -31,7 +31,7 @@ export class Card extends Component<any,any> {
         <TouchableOpacity
             accessibilityTraits="button"
             activeOpacity={0.6}
-            style={[styles.container, this.props.style, container]}>
+            style={[styles.container, this.props.style]}>
             <View style={styles.imageContainer}>
                 <Image source={require('./../assets/img_product.png')}/>
             </View>

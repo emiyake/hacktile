@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
   h1: {
     fontFamily: FontFamily.font_family_primary,
     fontSize: FontSize.font_size_large,
-    color: Colors.color_primary,
+    color: Colors.color_black,
   },
   h1_white: {
     fontFamily: FontFamily.font_family_primary,
@@ -21,13 +21,13 @@ export const styles = StyleSheet.create({
   h3: {
     fontFamily: FontFamily.font_family_secondary,
     fontSize: FontSize.font_size_large,
-    color: Colors.color_primary,
+    color: Colors.color_black,
   },
 
   h4: {
     fontFamily: FontFamily.font_family_secondary,
     fontSize: FontSize.font_size_medium,
-    color: Colors.color_primary,
+    color: Colors.color_black,
   },
 
   body: {
@@ -43,7 +43,7 @@ export const styles = StyleSheet.create({
   caption_error: {
     fontFamily: FontFamily.font_family_primary,
     fontSize: FontSize.font_size_x_small,
-    color: Colors.color_success,
+    color: Colors.color_red,
   },
   dt: {
     fontFamily: FontFamily.font_family_primary,
@@ -63,6 +63,6 @@ export const styles = StyleSheet.create({
   product_title: {
     fontFamily: FontFamily.font_family_secondary,
     fontSize: FontSize.font_size_x_large,
-    color: Colors.color_primary,
+    color: Colors.color_black,
   },
 });

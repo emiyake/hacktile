@@ -35,6 +35,10 @@ export class Home extends Component<any, any> {
           onPress={() => this.onPressListings()}
           title="Listings"
         />
+        <Button
+          onPress={() => this.onPressForms()}
+          title="Forms"
+        />
       </View>
     );
   }
@@ -57,6 +61,11 @@ export class Home extends Component<any, any> {
   onPressListings(){
     const { navigate } = this.props.navigation;
     navigate('Listings');
+  }
+
+  onPressForms(){
+    const { navigate } = this.props.navigation;
+    navigate('Forms');
   }
   
 }

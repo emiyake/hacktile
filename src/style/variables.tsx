@@ -17,10 +17,6 @@ export const FontSize = {
 };
 
 export const Colors = {
-    color_primary: this.color_black,
-    color_secondary: this.color_blue,
-    color_success: this.color_green,
-    color_error: this.color_red,
     color_blue: '#2B8FE5',
     color_dark_blue: '#00518F',
     color_white: '#FFF',

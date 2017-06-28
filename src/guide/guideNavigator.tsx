@@ -1,6 +1,6 @@
 import { Buttons } from './buttons';
 import { Forms } from './forms';
-import { Home } from './../home';
+import { Home } from './../app/modules/home';
 import { Listings } from './listings';
 import { StackNavigator } from 'react-navigation';
 import { Title } from './title';

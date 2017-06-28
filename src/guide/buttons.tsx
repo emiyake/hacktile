@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from './../components/button.component';
+import { Button } from './../app/components/button.component';
 import {
   StyleSheet,
   View,

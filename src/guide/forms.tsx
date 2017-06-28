@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { PickerComponent } from './../components/picker.component';
-import { TextInputComponent } from './../components/text_input.component';
+import { PickerComponent } from './../app/components/picker.component';
+import { TextInputComponent } from './../app/components/text_input.component';
 import {
   StyleSheet,
   View,

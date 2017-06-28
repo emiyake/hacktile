@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fontFamily, fontSize } from './../style/variables';
+import { fontFamily, fontSize } from './../app/style/variables';
 import {
   Text,
   StyleSheet,

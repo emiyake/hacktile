@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Card } from './../components/card.component';
+import { Card } from './../app/components/card.component';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { SimpleCellComponent } from './../components/simple_cell.component';
-import { VideoPlayerCellComponent } from './../components/video_player_cell.component';
-import { VisualAidComponent } from './../components/visual_aid.component';
+import { SimpleCellComponent } from './../app/components/simple_cell.component';
+import { VideoPlayerCellComponent } from './../app/components/video_player_cell.component';
+import { VisualAidComponent } from './../app/components/visual_aid.component';
 
 export class Listings extends Component<any, any> {
 

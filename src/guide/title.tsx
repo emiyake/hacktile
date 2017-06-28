@@ -11,7 +11,7 @@ import {
   H4,
   Label,
   ProductTitle
-  } from './../style/title';
+  } from './../app/style/title';
 import {
   StyleSheet,
   View,

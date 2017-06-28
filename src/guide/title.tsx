@@ -1,9 +1,21 @@
 import React, { Component } from 'react';
 import {
+  Body,
+  Caption,
+  CaptionError,
+  Dd,
+  Dt,
+  H1,
+  H2,
+  H3,
+  H4,
+  Label,
+  ProductTitle
+  } from './../style/title';
+import {
   StyleSheet,
   View,
 } from 'react-native';
-import { H1, H2, H3, H4, Body, Caption, CaptionError, Dd, Dt, Label, ProductTitle } from './../style/title';
 
 export class Title extends Component<any, any> {
 

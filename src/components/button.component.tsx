@@ -1,3 +1,5 @@
+import React, { Component } from 'React';
+import { styles } from './button.component.style';
 import {
   Text,
   View,
@@ -5,8 +7,6 @@ import {
   Image,
 } from 'react-native';
 
-import React,  {Component} from 'React';
-import {styles} from './button.component.style';
 
 export class Button extends Component<any,any> {
   props: {

@@ -1,10 +1,10 @@
 import { Buttons } from './buttons';
+import { Forms } from './forms';
 import { Home } from './../home';
 import { Listings } from './listings';
 import { StackNavigator } from 'react-navigation';
 import { Title } from './title';
 import { Typography } from './typography';
-import { Forms } from './forms';
 
 export const GuideNavigator = StackNavigator({
     Home: {screen: Home},

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import { FontFamily, FontSize } from './../style/variables';
 import {
   Text,
   StyleSheet,
   View,
 } from 'react-native';
-import { FontFamily, FontSize } from './../style/variables';
 
 export class Typography extends Component<any, any> {
 

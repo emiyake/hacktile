@@ -11,7 +11,6 @@ export class SimpleCellComponent extends Component<any,any> {
     style?: any;
   };
 
-
   render() {
 
     return (

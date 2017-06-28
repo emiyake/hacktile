@@ -1,7 +1,7 @@
-
 import React from 'react';
 import ReactNative from 'react-native';
-import {styles} from './title.style';
+import { styles } from './title.style';
+
 
 export function H1({...props}: Object) {
   return <ReactNative.Text style={[styles.h1]} {...props} />;

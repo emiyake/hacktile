@@ -1,3 +1,8 @@
+import Picker from 'react-native-picker';
+import React, { Component } from 'React';
+import { CaptionError, Label } from './../style/title';
+import { Colors } from './../style/variables';
+import { styles } from './picker.component.style';
 import {
   View,
   Text,
@@ -6,11 +11,6 @@ import {
   Picker as PickerNative,
   Platform,
 } from 'react-native';
-import React,  {Component} from 'React';
-import {styles} from './picker.component.style';
-import Picker from 'react-native-picker';
-import {Label, CaptionError} from './../style/title';
-import {Colors} from './../style/variables';
 
 export class PickerComponent extends Component<any,any> {
   props: {

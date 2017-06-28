@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import { PickerComponent } from './../components/picker.component';
+import { TextInputComponent } from './../components/text_input.component';
 import {
   StyleSheet,
   View,
 } from 'react-native';
-import { PickerComponent } from './../components/picker.component';
-import { TextInputComponent } from './../components/text_input.component';
 
 export class Forms extends Component<any, any> {
 
@@ -21,7 +21,7 @@ export class Forms extends Component<any, any> {
     super(props);
     
     for(var i=0;i<10;i++){
-        this.data.push('kkkk'+ i);
+        this.data.push('item '+ i);
     }
   }
 

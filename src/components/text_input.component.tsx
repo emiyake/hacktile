@@ -1,13 +1,8 @@
-import {
-  
-  TextInput,
-  View,
-  Platform
-} from 'react-native';
-import React,  {Component} from 'React';
-import {styles} from './text_input.component.style';
-import {Label, CaptionError} from './../style/title';
-import {Colors} from './../style/variables';
+import React, { Component } from 'React';
+import { CaptionError, Label } from './../style/title';
+import { Colors } from './../style/variables';
+import { Platform, TextInput, View } from 'react-native';
+import { styles } from './text_input.component.style';
 
 export class TextInputComponent extends Component<any,any> {
   props: {
@@ -26,6 +21,7 @@ export class TextInputComponent extends Component<any,any> {
     let isErrorMessage;
     let isErrorStyle;
     let underLineColor = Colors.color_lightest_gray;
+    
     if(this.props.isError){
         isErrorStyle = styles.inputError;
         isErrorMessage = <CaptionError>{this.props.errorMessage}</CaptionError>

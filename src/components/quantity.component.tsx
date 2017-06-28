@@ -1,11 +1,11 @@
+import React, { Component } from 'React';
+import { styles } from './quantity.component.style';
 import {
   View,
   Text,
   Image,
   TouchableOpacity,
 } from 'react-native';
-import React,  {Component} from 'React';
-import {styles} from './quantity.component.style';
 
 export class QuantityComponent extends Component<any,any> {
   props: {

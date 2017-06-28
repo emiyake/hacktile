@@ -1,7 +1,7 @@
+import { Colors, Spacing } from './../style/variables';
 import {
   StyleSheet,
 } from 'react-native';
-import {Colors, Spacing} from './../style/variables';
 
 
 export const styles = StyleSheet.create({

@@ -1,10 +1,10 @@
+import React, { Component } from 'React';
+import { styles } from './visual_aid.component.sytle';
 import {
   Image,
   Text,
   TouchableOpacity,
 } from 'react-native';
-import React,  {Component} from 'React';
-import {styles} from './visual_aid.component.sytle';
 
 export class VisualAidComponent extends Component<any,any> {
   props: {

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import { Button } from './../components/button.component';
 import {
   StyleSheet,
   View,
 } from 'react-native';
-import { Button } from './../components/button.component';
 
 export class Buttons extends Component<any, any> {
 
@@ -22,7 +22,7 @@ export class Buttons extends Component<any, any> {
   }
 
   onPress(){
-    alert('kakkaka');
+    
   }
 }
 

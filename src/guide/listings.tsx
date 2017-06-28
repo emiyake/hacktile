@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  View,
-  ScrollView
-} from 'react-native';
 import { Card } from './../components/card.component';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { SimpleCellComponent } from './../components/simple_cell.component';
-import { VisualAidComponent } from './../components/visual_aid.component';
 import { VideoPlayerCellComponent } from './../components/video_player_cell.component';
+import { VisualAidComponent } from './../components/visual_aid.component';
 
 export class Listings extends Component<any, any> {
 

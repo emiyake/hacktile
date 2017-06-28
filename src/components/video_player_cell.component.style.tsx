@@ -1,7 +1,5 @@
-import {
-  StyleSheet
-} from 'react-native';
-import {Colors, Spacing, FontFamily} from './../style/variables';
+import { Colors, FontFamily, Spacing } from './../style/variables';
+import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
@@ -16,6 +14,11 @@ export const styles = StyleSheet.create({
       fontSize: 10,
       color: Colors.color_white,
       marginTop: Spacing.spacing_x_small
+  },
+  productImagePlaceholder: {
+    width: '100%', 
+    height:'100%', 
+    borderRadius: 5
   }
 
 });

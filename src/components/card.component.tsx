@@ -1,12 +1,8 @@
-import {
-  View,
-  Image,
-  TouchableOpacity
-} from 'react-native';
-import React,  {Component} from 'React';
-import {Label, H3} from './../style/title';
-import {styles} from './card.component.style';
-import {QuantityComponent} from './quantity.component';
+import React, { Component } from 'React';
+import { H3, Label } from './../style/title';
+import { Image, TouchableOpacity, View } from 'react-native';
+import { QuantityComponent } from './quantity.component';
+import { styles } from './card.component.style';
 
 export class Card extends Component<any,any> {
   props: {
@@ -31,7 +27,7 @@ export class Card extends Component<any,any> {
         <TouchableOpacity
             accessibilityTraits="button"
             activeOpacity={0.6}
-            style={[styles.container, this.props.style]}>
+            style={[styles.container, this.props.style, container]}>
             <View style={styles.imageContainer}>
                 <Image source={require('./../assets/img_product.png')}/>
             </View>

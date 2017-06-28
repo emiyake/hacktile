@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {Colors} from './../style/variables'
+import { Colors, Spacing, FontSize } from './../style/variables';
+import { StyleSheet } from 'react-native';
 
 const HEIGHT = 50;
 
@@ -28,11 +28,11 @@ export const styles = StyleSheet.create({
     backgroundColor: Colors.color_white,
   },
   icon: {
-    marginRight: 12,
+    marginRight: Spacing.spacing_regular,
   },
   caption: {
     letterSpacing: 1,
-    fontSize: 12,
+    fontSize: FontSize.font_size_small,
   },
   primaryCaption: {
     color: Colors.color_white,

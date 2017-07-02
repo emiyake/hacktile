@@ -7,7 +7,7 @@ export class PeopleList extends Component<any, any> {
 
   static navigationOptions = {
     title: 'People',
-  }
+  };
 
   constructor(props) {
     super(props);
@@ -35,7 +35,7 @@ export class PeopleList extends Component<any, any> {
   }
 
   handlePeopleRowPress(user: any) {
-    this.props.navigation.navigate('People', { user: user})
+    this.props.navigation.navigate('People', { user: user});
   }
 
   render() {

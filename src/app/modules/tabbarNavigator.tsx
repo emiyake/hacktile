@@ -1,14 +1,14 @@
 import { Cart } from './checkout';
-import { CategoryNavigator } from './category';
 // import { Home } from './home';
 import { OrderNavigator } from './order';
 import { Settings } from './settings';
 import { TabNavigator } from 'react-navigation';
-import { GuideNavigator} from './../../guide/guideNavigator';
+import { GuideNavigator } from './../../guide/guideNavigator';
+import { PeopleNavigator } from './people';
 
 export const TabNav = TabNavigator({
   Home: { screen:  GuideNavigator},
-  Specialties: { screen: CategoryNavigator},
+  People: { screen: PeopleNavigator },
   Basket: { screen: Cart },
   Orders: { screen: OrderNavigator },
   Settings: { screen: Settings },

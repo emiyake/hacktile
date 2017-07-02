@@ -27,17 +27,24 @@ export class LoginUseCase {
       shouldFetchBasicProfile: true,
     });
 
-    const user = await GoogleSignIn.signInPromise();
-    let credential = firebase.auth.GoogleAuthProvider.credential(user.idToken, user.accessToken);
-    firebase.auth().signInWithCredential(credential).then((result) => {
-      firebase.database().ref(`users/${result.uid}`).set({
-        email: result.email,
-        photoURL: result.photoURL,
-        name: result.displayName,
-      });
-    }).catch( error => {
-      console.error(error);
-    });
+    const googleUser = await GoogleSignIn.signInPromise();
 
+    let credential = firebase.auth.GoogleAuthProvider.credential(googleUser.idToken, googleUser.accessToken);
+    const user = await firebase.auth().signInWithCredential(credential);
+
+    firebase.database().ref(`users/${user.uid}`).set({
+      email: user.email,
+      photoURL: user.photoURL,
+      name: user.displayName,
+    }).catch(error => { console.error(error); });
+
+    console.log(user);
+
+    return user;
+  }
+
+  async logout() {
+    GoogleSignIn.signOut();
+    await firebase.auth().signOut();
   }
 }

@@ -15,10 +15,13 @@ export class Login extends Component<any, any> {
   };
 
   private subscriptions: Subscription[] = [];
+  private loginUC: LoginUseCase = new LoginUseCase();
 
   onLoginPressed() {
-    let loginUC: LoginUseCase = new LoginUseCase();
-    loginUC.login();
+    this.loginUC.login();
+  }
+  onLogoutPressed() {
+    this.loginUC.logout();
   }
 
   render() {
@@ -28,6 +31,7 @@ export class Login extends Component<any, any> {
 
         <View style={styles.buttonContainer}>
           <Button title='Entrar' onPress={() => this.onLoginPressed()}/>
+          <Button title='Sair' onPress={() => this.onLogoutPressed()}/>
 
         </View>
 

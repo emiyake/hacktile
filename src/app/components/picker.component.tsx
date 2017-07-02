@@ -1,16 +1,17 @@
-import Picker from 'react-native-picker';
-import React, { Component } from 'React';
 import { CaptionError, Label } from './../style/title';
-import { colors } from './../style/variables';
-import { styles } from './picker.component.style';
 import {
-  View,
-  Text,
   Image,
-  TouchableOpacity,
   Picker as PickerNative,
   Platform,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
+import React, { Component } from 'React';
+
+import Picker from 'react-native-picker';
+import { colors } from './../style/variables';
+import { styles } from './picker.component.style';
 
 export class PickerComponent extends Component<any,any> {
   props: {
@@ -47,7 +48,7 @@ export class PickerComponent extends Component<any,any> {
             </PickerNative>;
       }else{
           this.picker = <TouchableOpacity
-            accessibilityTraits="button"
+            accessibilityTraits='button'
             activeOpacity={0.6}
             onPress={()=> this.onPress(this.props.data)}
             style={styles.pickerContainer}>

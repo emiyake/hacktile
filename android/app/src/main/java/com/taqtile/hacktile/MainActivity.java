@@ -1,4 +1,4 @@
-package com.app;
+package com.taqtile.hacktile;
 
 import com.facebook.react.ReactActivity;
 

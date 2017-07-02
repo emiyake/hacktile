@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import {
   Body,
   Caption,
@@ -10,8 +9,9 @@ import {
   H3,
   H4,
   Label,
-  ProductTitle
-  } from './../app/style/title';
+  ProductTitle,
+} from './../app/style/title';
+import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
@@ -40,7 +40,6 @@ export class Title extends Component<any, any> {
       </View>
     );
   }
-
 }
 
 const styles = StyleSheet.create({

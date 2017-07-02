@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Button } from './../app/components/button.component';
 import {
   StyleSheet,
   View,
 } from 'react-native';
+
+import { Button } from './../app/components/button.component';
 
 export class Buttons extends Component<any, any> {
 
@@ -21,8 +22,7 @@ export class Buttons extends Component<any, any> {
     );
   }
 
-  onPress(){
-    
+  onPress() {
   }
 }
 
@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10
   },
-  
 });
 
 

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "330006232380",
+    "firebase_url": "https://hacktile-1c463.firebaseio.com",
+    "project_id": "hacktile-1c463",
+    "storage_bucket": "hacktile-1c463.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330006232380:android:81db3a97af267b9a",
+        "android_client_info": {
+          "package_name": "com.taqtile.hacktile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "330006232380-d04q3bcfb28bp088qg1uhmdjj6gonjq9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.taqtile.hacktile",
+            "certificate_hash": "a44c23819ce0a6e470df9c50f997a4aa0673fcc1"
+          }
+        },
+        {
+          "client_id": "330006232380-decl7vb6jl13jl1h0lf5qvm0qphlfv1b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzMgfa11WJNwCanrVQT-yeccsdF63pBqQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "330006232380-decl7vb6jl13jl1h0lf5qvm0qphlfv1b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

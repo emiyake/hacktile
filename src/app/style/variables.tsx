@@ -3,9 +3,10 @@ const FONT_FAMILY = {
     MONTSERRAT: 'Montserrat-Regular',
     NOTOSERIF: 'NotoSerif',
 }
+
 export const fontFamily = {
     font_family_primary: FONT_FAMILY.MONTSERRAT,
-    font_family_secondary: FONT_FAMILY.NOTOSERIF
+    font_family_secondary: FONT_FAMILY.NOTOSERIF,
 };
 
 export const fontSize = {
@@ -31,7 +32,7 @@ export const colors = {
 }
 
 export const fontWeight = {
-    font_weight_bold : 'bold'
+    font_weight_bold : 'bold',
 }
 
 export const spacing = {
